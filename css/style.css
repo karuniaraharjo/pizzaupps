@@ -1,0 +1,238 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variabel Warna untuk kemudahan kustomisasi */
+:root {
+    --primary-color: #ffc107; /* Warna kuning khas (Bootstrap's warning) */
+    --secondary-color: #343a40; /* Warna gelap (Bootstrap's dark) */
+    --light-color: #f8f9fa; /* Warna latar terang */
+    --text-color: #212529;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    /* Untuk memperhalus scroll saat klik navigasi */
+    scroll-behavior: smooth; 
+}
+
+/* 7. Styling Responsif & Modern */
+
+/* --- Navbar Styling --- */
+.navbar {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: var(--text-color) !important;
+}
+.navbar .nav-link {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+}
+.navbar.scrolled .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 100vh;
+    /* GANTI URL GAMBAR DI BAWAH INI */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg-hero.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.btn-warning {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* --- Section Styling --- */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+}
+
+h2.fw-bold {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 1rem;
+}
+h2.fw-bold::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* --- Menu Card Styling --- */
+.menu-card {
+    border: none;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* --- Gallery Image Styling --- */
+.gallery-img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- Contact Form Styling --- */
+#contact-form .form-control {
+    border-radius: 0.25rem;
+    padding: 12px;
+}
+#contact-form .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    border-color: var(--primary-color);
+}
+
+/* 7. Media Queries untuk Perangkat Kecil */
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: var(--text-color) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* =============================================== */
+/* Styling untuk Halaman Terima Kasih         */
+/* =============================================== */
+.thankyou-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-color); /* Menggunakan warna latar terang dari variabel */
+}
+
+.thankyou-page .icon {
+    font-size: 6rem; /* Membuat ikon jadi besar */
+    color: var(--primary-color); /* Menggunakan warna kuning utama brand */
+    margin-bottom: 1.5rem;
+}
+
+/* =============================================== */
+/* Styling untuk Halaman Tentang Kami         */
+/* =============================================== */
+.page-header {
+    padding: 6rem 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg-hero.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.achievement-logo {
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.achievement-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Navbar solid untuk halaman selain Beranda */
+.navbar.bg-dark {
+    transition: none; /* Hilangkan transisi di halaman lain */
+}
+
+/* =============================================== */
+/* Styling untuk Halaman Galeri               */
+/* =============================================== */
+.gallery-thumbnail {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* =============================================== */
+/* Styling untuk Halaman Kontak               */
+/* =============================================== */
+.contact-item .bi {
+    /* Sedikit align ikon ke atas agar sejajar dengan teks */
+    margin-top: 5px;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    position: relative;
+    height: 0;
+    border-radius: .5rem; /* Membuat sudut peta lebih halus */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
