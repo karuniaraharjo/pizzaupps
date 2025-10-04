@@ -1,6 +1,3 @@
-// 8. Interaktivitas: DOM manipulation
-// 9. Menggunakan jQuery
-
 $(document).ready(function () {
   // Efek 'scrolled' pada navbar saat halaman di-scroll
   $(window).scroll(function () {

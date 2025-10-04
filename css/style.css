@@ -17,8 +17,6 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* 7. Styling Responsif & Modern */
-
 /* --- Navbar Styling --- */
 .navbar {
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
