@@ -17,6 +17,10 @@ body {
     scroll-behavior: smooth; 
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
 /* --- Navbar Styling --- */
 .navbar {
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
@@ -181,14 +185,10 @@ h2.fw-bold::after {
 }
 
 .achievement-logo {
-    opacity: 0.6;
-    filter: grayscale(100%);
     transition: all 0.3s ease;
 }
 
 .achievement-logo:hover {
-    opacity: 1;
-    filter: grayscale(0%);
     transform: scale(1.1);
 }
 
